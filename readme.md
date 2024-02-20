@@ -6,17 +6,17 @@ Um exercício, que consiste em revisar conceitos importantes em React. Este repo
 
 Estrutura foi feita em Vite, Tailwind.
 
-### :snail: **Vite** é uma ferramenta para desenvolvimento de aplicações web.
+### :snail: **Vite** é uma ferramenta para desenvolvimento de aplicações web:
 
 ➜ Advém da palavra francesa "Vite", que significa rápido.
 
 ➜ Vite é um bundler, (empacotador) e um build tool (ferramenta de construção), para o desenvolvimento de aplicações web modernas. É reconhecida por ser rápida e eficiente durante o processo de desenvolvimento.
 
-➜ O Vite difere do Webpack, outro bundler tradicional que compila e empacota todo o código do projeto antes dde servir para o navegador, uma vez que o Vite adota uma abordagem de "module streaming", ou transmissão de módulos, onde cada módulo é servido individualmente durante o desenvolvimento. Isso resulta em tempos de compilação muito mais rápidos, pois apenas os módulos que foram modificados precisam ser recompilados.
+➜ O Vite difere do Webpack, outro bundler tradicional que compila e empacota todo o código do projeto antes de servir para o navegador, uma vez que o Vite adota uma abordagem de "module streaming", ou transmissão de módulos, onde cada módulo é servido individualmente durante o desenvolvimento. Isso resulta em tempos de compilação muito mais rápidos, pois apenas os módulos que foram modificados precisam ser recompilados.
 
 ➜ Vite suporta vários tipos de projetos, incluindo aplicações Vue.js, React, Preact e Svelte, entre outros. Ele também oferece um ecossistema de plugins para estender suas funcionalidades.
 
-## :lady_beetle: **Tailwindcss** é uma biblioteca que permite utilizar classes utilitárias.
+### :lady_beetle: **TailwindCSS** é uma biblioteca que permite utilizar classes utilitárias:
 
 ➜ No contexto de desenvolvimento web front-end, uma classe utilitária refere-se a uma classe CSS que fornece uma única funcionalidade ou estilo específico. Essas classes são geralmente projetadas para serem reutilizáveis e aplicadas diretamente a elementos HTML, para fornecer estilos ou funcionalidades específicas de maneira rápida e eficiente.
 
