@@ -11,7 +11,6 @@ import {
   TableHeader,
   TableRow,
 } from "./components/ui/table";
-import { Pagination } from "./components/pagination";
 
 export function App() {
   return (
@@ -63,7 +62,7 @@ export function App() {
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-zinc-500">13 vídeo(s)</TableCell>
+                  <TableCell className="text-zinc-300">13 vídeo(s)</TableCell>
                   <TableCell className="text-rigth">
                     <Button size="icon">
                       <MoreHorizontal className="size-4" />
