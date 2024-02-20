@@ -8,7 +8,7 @@ export function Table(props: TableProps) {
     <table
       {...props}
       className={twMerge(
-        "w-full text-sm border-t-2 border-b-2 border-zinc-800",
+        "w-full text-sm border-t-2 border-b-2 border-zinc-800 ",
         props.className
       )}
     />
@@ -28,7 +28,7 @@ export function TableHead(props: TableHeadProps) {
     <th
       {...props}
       className={twMerge(
-        "text-left py-3 px-4 font-medium text-zinc-300",
+        "text-left py-3 px-4 font-medium text-zinc-300 hover:text-zinc-50",
         props.className
       )}
     />
@@ -55,7 +55,10 @@ export function TableRow(props: TableRowProps) {
   return (
     <tr
       {...props}
-      className={twMerge("border-b border-zinc-800", props.className)}
+      className={twMerge(
+        "border-b border-zinc-800 table-auto hover:text-zinc-50 border-solid border-zinc-700 border-y-2",
+        props.className
+      )}
     />
   );
 }
@@ -63,5 +66,13 @@ export function TableRow(props: TableRowProps) {
 interface TableCellProps extends ComponentProps<"td"> {}
 
 export function TableCell(props: TableCellProps) {
-  return <td {...props} className={twMerge("py-3 px-4", props.className)} />;
+  return (
+    <td
+      {...props}
+      className={twMerge(
+        "py-3 px-4 hover:text-zinc-50 border-b-2 border-zinc-700",
+        props.className
+      )}
+    />
+  );
 }

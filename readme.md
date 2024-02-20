@@ -4,7 +4,7 @@ Um exercício, que consiste em revisar conceitos importantes em React. Este repo
 
 ## :seedling: Dia 1
 
-Estrutura foi feita em Vite, Tailwind.
+Estrutura foi feita utilizandop PNPM, Vite, TailwindCSS, entre outras tecnologias que serão citadas em breve.
 
 ### :snail: **Vite** é uma ferramenta para desenvolvimento de aplicações web:
 
