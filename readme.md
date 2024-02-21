@@ -40,7 +40,38 @@ Apesar disso, o NPM é amplamente utilizado e suportado pela comunidade de desen
 
 ➜ Tailwind CSS, por sua vez, é um framework de CSS que segue a abordagem utility-first. Ele fornece um conjunto abrangente de classes utilitárias que abrangem uma ampla gama de estilos e funcionalidades. Com o Tailwind CSS, os desenvolvedores podem construir interfaces de usuário rapidamente, aplicando essas classes diretamente ao elemento HTML, em vez que escrever CSS personalizado. Isso torna o desenvolvimento mais eficiente e permite uma maior flexibilidade no design da interface do usuário.
 
+### :crab: **JSON Server** é uma ferramenta de desenvolvimento para criar uma API REST com base em um arquivo JSON:
+
+➜ É frequentemente usado para desenvolvimento front-end, especialmente quando precisa-se simular uma API enquanto trabalha no desenvolvimento do front-end da aplicação.
+
+➜ É uma ferramenta para criação rápida de uma API, ou seja, pode-se criar rapidamente uma API RESTful completa apenas definindo a estrutura de seus dados em um arquivo JSON. Isso é extremamente útil durante o desenvolvimento de frontend, pois permite que você comece a trabalhar com dados reais sem ter que configurar um servidor backend.
+
+➜ As rotas podem ser personalizadas. Além das rotas geradas automaticamente com base na estrutura do arquivo JSON, o JSON Server permite definir rotas personalizadas para manipular solicitações HTTP de maneira específica. Isso é útil para implementar lógica personalizada ou simular diferentes cenários de resposta da API.
+
+➜ O JSON suporta consultas complexas, permitindo filtrar, classificar e paginar os dados retornados pela API. Isso é útil para testar a integração do front-end com a API em diferentes situações.
+
+➜ E por fim, o JSON Server também suporta a persistência de dados em um arquivo JSON ou em um banco de dados NoSQL, como MongoDB. Isso permite que você mantenha o estado dos dados entre as reinicializações do servidor.
+
+Assim, o JSON Server é uma ferramenta poderosa e flexível para criar APIs RESTful de maneira rápida e fácil durante o desenvolvimento frontend. É amplamente utilizado na comunidade de desenvolvimento web para acelerar o processo de desenvolvimento e facilitar a colaboração entre equipes frontend e backend.
+
+No caso, o arquivo criado Server JSON para o presente projeto front-end React pode ser um exemplo que pode ser usado para diversas finalidades, dependendo das necessidades específicas do projeto. Este arquivo pode ser útil, pois:
+
+➜ Para configurar um ambiente, o arquivo **server.json** pode conter configurações específicas do ambiente, como variáveis de ambiente, configurações de servidor ou outras informações relacionadas ao ambiente de desenvolvimento, teste ou produção. Isso permite que você tenha diferentes configurações para diferentes ambientes sem modificar diretamente o código fonte.
+
+➜ Pode ser utilizado como mock de dados, definindo endpoints de API falsos ou mockados durante o desenvolvimento. Isso é útil quando você está trabalhando em um frontend antes que a API real esteja pronta ou para simular diferentes cenários de resposta da API.
+
+➜ Se o desenvolvedor estiver construíndo um frontend que precisa se comunicar com um backend em um domínio diferente (por exemplo, um frontend React consumindo uma API Node.js), o server.json pode ser usado para configurar um **proxy** para redirecionar solicitações para o servidor de backend durante o desenvolvimento. Isso evita problemas de **CORS** (Cross-Origin Resource Sharing) durante o desenvolvimento local.
+
+➜ Pode-se usar, ainda, o server.json para definir regras de roteamento para servir diferentes arquivos ou direcionar solicitações para diferentes manipuladores de rota durante o desenvolvimento. Isso pode ser útil para simular diferentes cenários de roteamento ou para criar configurações específicas para rotas no ambiente de desenvolvimento.
+
+Um arquivo server.json em um projeto frontend React pode ser uma ferramenta poderosa para configurar o ambiente de desenvolvimento, simular serviços ou endpoints de API, definir regras de roteamento ou lidar com outras configurações específicas do projeto. Ele oferece flexibilidade e controle adicionais sobre o ambiente de desenvolvimento, permitindo que você se adapte às necessidades do seu projeto.
+
 ## :sunflower: Pontos Interessantes a entender:
 
 Listagem de Dados - conceitos importantes URL state, HTTP state, etc.
 Squeleton Screen em React.
+
+Para filtrar os dados que vêm do server, sendo utilizado o json-server, pode-se usar a paginação.
+
+http://localhost:3333/tags
+?\_page=1&\_per_page=5

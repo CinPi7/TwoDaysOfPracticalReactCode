@@ -11,8 +11,16 @@ import {
   TableHeader,
   TableRow,
 } from "./components/ui/table";
+import { useQuery } from "@tanstack/react-query";
 
 export function App() {
+  const data = useQuery({
+    queryKey: ["get-tags"],
+    queryFn: () => {
+      fetch("http://localhost:3333/tags");
+    },
+  });
+
   return (
     <div className="py-10 space-y-8 mx-8">
       <div className="">
