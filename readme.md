@@ -86,6 +86,22 @@ Um arquivo server.json em um projeto frontend React pode ser uma ferramenta pode
 
 TypeScript pode ser uma escolha valiosa para projetos React, pois adiciona uma camada de segurança e robustez ao código, facilita o desenvolvimento e a manutenção do código e melhora a experiência geral do desenvolvedor.
 
+## :spider_web: **React Router** constrói uma completa interface de usuário que mapeia para a URL:
+
+➜ Inscreve e manipula o histórico da piha (history stack). À medida que o usuário navega, o navegador mantém o controle de cada localização em uma pilha. Se você clicar e manter pressionado o botão "voltar" em um navegador, poderá ver a pilha de histórico do navegador ali mesmo.
+
+➜ URL deve corresponder às suas rotas - URL é a barra de endereço. Rotas, por sua vez, implica em um objeto ou Elemento de Rota, geralmente com uma estrutura de { path, element } ou <Route path element>. O path é um padrão de caminho. Quando o padrão de caminho corresponde à URL atual, o elemento será renderizado.
+
+`const router = createBrowserRouter([{ path: "/", element: <App /> }]);`
+
+➜ Renderização de uma UI aninhada a partir de correspondências da rota. Um array de rotas (ou ramo da configuração de rotas) que corresponde à localização atual. Essa estrutura permite rotas aninhadas.
+
+### :scorpion: **Hooks** são funções personalizáveis para adicionar recursos de estado e ciclo de vida a componentes funcionais:
+
+➜ Há Hooks incorporados disponíveis pelo React, como **useState** e **useEffect**, que permitem que os componentes funcionais tenham estado interno e respondam a mudanças no ciclo de vida.
+
+➜ No caso, foi criado o **useDebounceValue**, que implica atrasar a busca enquanto o usuário estiver digitando. Debounce é uma estratégia que causa delay, depois que o usuário parou de digitar ele executa algo. Este é um **Hook Personalizado**, que faz uso do **useState** para definir um estado local dentro do componente funcional, mantendo o valor atrasado ou debounced que será retornado pelo hook; além de usar o **useEffect** que executa efeitos colaterias em componentes funcionais, a fim de criar um timer que atualiza o valor debounced após um determinado atraso. O retorno pode ser utilizado pelo componente que o chama.
+
 ## :sunflower: Pontos Interessantes a entender:
 
 Listagem de Dados deve seguir boas práticas para que o funcionamento não traga surpresas ou erros durante a paginação, como ao manter o número da página correta, não voltando à primeira, caso o link seja compartilhado, por exemplo.

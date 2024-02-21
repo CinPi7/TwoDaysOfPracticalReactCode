@@ -1,4 +1,4 @@
-import { Plus, Search, FileDown, MoreHorizontal } from "lucide-react";
+import { Plus, Search, Filter, FileDown, MoreHorizontal } from "lucide-react";
 import { Header } from "./components/header";
 import { Tabs } from "./components/tabs";
 import { Button } from "./components/ui/button";
@@ -11,8 +11,11 @@ import {
   TableHeader,
   TableRow,
 } from "./components/ui/table";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { Pagination } from "./components/pagination";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import useDebounceValue from "./hooks/debounce-value";
 export interface TagResponse {
   first: number;
   prev: any;
@@ -30,18 +33,47 @@ export interface Tag {
 }
 
 export function App() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [filter, setFilter] = useState("");
+
+  // const debounceFilter = useDebounceValue(filter, 1000);
+
+  const page = searchParams.get("page") ? Number(searchParams.get("page")) : 1;
+  const urlFilter = searchParams.get("filter") ?? "";
+
+  // useEffect(() => {
+  //   setSearchParams((params) => {
+  //     params.set("page", "1");
+  //     return params;
+  //   });
+  // }, [debounceFilter, setSearchParams]);
+  // // para filtrar os dados a partir da página 1, independente da pagina atual
+
   const { data: tagsResponse, isLoading } = useQuery<TagResponse>({
-    queryKey: ["get-tags"], // id unico
+    queryKey: ["get-tags", urlFilter, page], // id unico
     queryFn: async () => {
       const response = await fetch(
-        "http://localhost:3333/tags?_page=1&_per_page=10"
+        `http://localhost:3333/tags?_page=${page}&_per_page=50&title=${urlFilter}`
       ); // onde tá rodando a API
       const data = await response.json();
       console.log(data);
 
+      // dealy 2s
+      // await new Promise((resolve) => setTimeout(resolve, 2000));
+
       return data;
     },
+    placeholderData: keepPreviousData,
   });
+
+  function handleFilter() {
+    setSearchParams((params) => {
+      params.set("page", "1");
+      params.set("filter", filter);
+
+      return params;
+    });
+  }
 
   if (isLoading) {
     return null;
@@ -62,10 +94,20 @@ export function App() {
         </div>
 
         <div className="flex items-center justify-between">
-          <Input variant="filter">
-            <Search className="size-3" />
-            <Control placeholder="Pesquise tags" />
-          </Input>
+          <div className="flex items-center">
+            <Input variant="filter">
+              <Search className="size-3" />
+              <Control
+                placeholder="Pesquise tags"
+                onChange={(e) => setFilter(e.target.value)}
+                value={filter}
+              />
+            </Input>
+            <Button>
+              {" "}
+              <Filter className="size-3" onClick={handleFilter} /> Filter
+            </Button>
+          </div>
 
           <Button>
             {" "}
@@ -97,7 +139,7 @@ export function App() {
                     </div>
                   </TableCell>
                   <TableCell className="text-zinc-300">
-                    {tag.amountOfVideos}
+                    {tag.amountOfVideos} video(s)
                   </TableCell>
                   <TableCell className="text-rigth">
                     <Button size="icon">
@@ -114,7 +156,7 @@ export function App() {
           <Pagination
             pages={tagsResponse.pages}
             items={tagsResponse.items}
-            page={1}
+            page={page}
           />
         )}
       </main>
